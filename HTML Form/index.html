@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Safa Qasrawi">
+
+    <title>Form</title>
+
+</head>
+
+<body>
+
+    <header><h1>Simple Form</h1></header>
+
+    <form>
+
+        <fieldset>
+            <legend>Personal Information</legend>
+
+            <div>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name">
+
+            </div><br>
+
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email">
+            </div><br>
+
+            <div>
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob">
+            </div><br>
+
+            <div>
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone">
+            </div><br>
+
+            <div>
+                <label for="website">Personal Website:</label>
+                <input type="url" id="website" name="website">
+            </div><br>
+
+        </fieldset><br>
+
+        <fieldset>
+            <legend>Preferences</legend>
+
+            <div>
+                <label>Gender:</label>
+                <input type="radio" id="male" name="male">
+                <label for="male">Male</label>
+                <input type="radio" id="female" name="female">
+                <label for="femal">Female</label>
+            </div><br>
+
+            <div>
+                <label for="profile">Profile Picture:</label>
+                <input type="file" id="pp" name="profile">
+            </div><br>
+
+            <div>
+                <label for="subject">Favorite Subject:</label><br>
+
+                <input type="checkbox" id="math" name="math">
+                <label for="math">Math</label><br>
+
+                <input type="checkbox" id="science" name="science">
+                <label for="science">Science</label><br>
+
+                <input type="checkbox" id="history" name="history">
+                <label for="history">History</label>
+            </div><br>
+
+            <div>
+                <label for="grade">Grade:</label>
+                <select id="grade" name="grade">
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                    <option value="F">F</option>
+                </select>
+            </div><br>
+
+            <div>
+                <label for="color">Favorite Color</label>
+                <input type="color" id="color" name="color">
+            </div><br>
+
+            <div>
+                <label for="browser">Favorite Browser</label>
+                <input type="text" id="browser" name="browser">
+            </div><br>
+
+        </fieldset><br>
+
+        <fieldset>
+            <legend>Additional Information</legend>
+
+            <div>
+                <label for="comments">Comments:</label><br>
+                <textarea id="comments" name="comments" rows="3" cols="40"></textarea>
+            </div><br>
+
+        </fieldset><br>
+
+        <div>
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </div>
+
+    </form>
+
+</body>
+
+</html>
