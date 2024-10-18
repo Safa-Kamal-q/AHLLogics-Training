@@ -11,7 +11,7 @@ const AllBooks = () => {
     let config = {
       method: 'get',
       maxBodyLength: Infinity,
-      url: 'https://libraryforstd-d5epbbadfwc3hygk.eastasia-01.azurewebsites.net/api/Book/GetBooks',
+      url: 'https://ahllibrary.azurewebsites.net/api/Book/GetBooks',
     };
 
     axios.request(config)

@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
-import BookCard from '../BookCard.jsx/BookCard'
 import Loader from '../Loader/Loader';
+import BookCard from '../BookCard.jsx/BookCard'
+
 
 const RecentlyAdded = () => {
 
@@ -11,7 +12,7 @@ const RecentlyAdded = () => {
         let config = {
             method: 'get',
             maxBodyLength: Infinity,
-            url: 'https://libraryforstd-d5epbbadfwc3hygk.eastasia-01.azurewebsites.net/api/Book/GetBooks',
+            url: 'https://ahllibrary.azurewebsites.net/api/Book/GetBooks',
         };
 
         axios.request(config)
