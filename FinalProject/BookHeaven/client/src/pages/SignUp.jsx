@@ -36,6 +36,7 @@ const SignUp = () => {
 
     } catch (error) {
       console.log(error)
+      alert(error.response.data[0].description)
     }
   }
 

@@ -18,6 +18,7 @@ const AllBooks = () => {
       .then((response) => {
         const data = response.data;
         setData(data);
+        console.log(data);
       })
       .catch((error) => {
         console.log(error);
