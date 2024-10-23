@@ -10,6 +10,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { authAction } from './store/auth'
 import Profile from "./pages/Profile"
 import BorrowedBooks from "./components/Profile/BorrowedBooks"
+import ViewBookDetails from './components/ViewBookDetails/ViewBookDetails'
 
 function App() {
 
@@ -35,9 +36,11 @@ function App() {
         <Route path="/all-books" element={<AllBooks />} />
         <Route path="/Login" element={<LogIn />} />
         <Route path="/SignUp" element={<SignUp />} />
+        <Route path="view-book-details/:id" element={<ViewBookDetails/>}/>
         <Route path="/Profile" element={<Profile />}>
           <Route index element={<BorrowedBooks/>}/>
         </Route>
+      
       </Routes>
       <Footer />
     </>
