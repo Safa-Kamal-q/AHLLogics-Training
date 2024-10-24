@@ -11,6 +11,8 @@ import { authAction } from './store/auth'
 import Profile from "./pages/Profile"
 import BorrowedBooks from "./components/Profile/BorrowedBooks"
 import ViewBookDetails from './components/ViewBookDetails/ViewBookDetails'
+import AllBorrowedBooks from './pages/AllBorrowedBooks'
+import AddBook from './pages/AddBook'
 
 function App() {
 
@@ -34,13 +36,13 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route path="/all-books" element={<AllBooks />} />
-        <Route path="/Login" element={<LogIn />} />
-        <Route path="/SignUp" element={<SignUp />} />
-        <Route path="view-book-details/:id" element={<ViewBookDetails/>}/>
-        <Route path="/Profile" element={<Profile />}>
-          <Route index element={<BorrowedBooks/>}/>
+        <Route path="/login" element={<LogIn />} />
+        <Route path="/signUp" element={<SignUp />} />
+        <Route path="view-book-details/:id" element={<ViewBookDetails />} />
+        <Route path="/profile" element={<Profile />}>
+          {role === "User" ? <Route index element={<BorrowedBooks />} /> : <Route index element={<AllBorrowedBooks />} />}
+          {role === "Admin" && <Route path="/profile/add-book" element={<AddBook />} />}
         </Route>
-      
       </Routes>
       <Footer />
     </>

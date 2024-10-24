@@ -1,12 +1,13 @@
 import React from 'react'
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { FaArrowRightFromBracket } from "react-icons/fa6";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { authAction } from '../../store/auth'
 
 const Sidebar = ({ data }) => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
+    const role = useSelector((state) => state.auth.role);
 
     function logout() {
         dispatch(authAction.logout());
@@ -30,6 +31,22 @@ const Sidebar = ({ data }) => {
                 <p className='mt-1 text-normal text-zinc-300'>{data.email || "user@example.com"}</p>
                 <div className="w-full mt-4 h-[1px] bg-zinc-500 hidden lg:block"></div>
             </div>
+            {role === "Admin" &&
+                <>
+                    <Link
+                        to="/profile/"
+                        className='text-zinc-100 font-semibold w-full py-2 mt-4 text-center hover:bg-zinc-900 rounded transition-'
+                    >
+                        All Borrowed Books 
+                    </Link>
+                    <Link
+                        to="/profile/add-book"
+                        className='text-zinc-100 font-semibold w-full py-2 mt-4 text-center hover:bg-zinc-900 rounded transition-'
+                    >
+                        Add Book
+                    </Link>
+                </>
+            }
             <button
                 className="bg-zinc-900 w-3/6 lg:w-full mt-4 lg:mt-0 text-white font-semibold flex items-center justify-center py-2 rounded hover:bg-white hover:text-zinc-900 transition-all duration-300"
                 onClick={logout}
