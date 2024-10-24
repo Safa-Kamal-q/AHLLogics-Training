@@ -85,7 +85,7 @@ const LogIn = () => {
               <p className='text-zinc-200 text-xl flex justify-center'>Or</p>
               <p className='text-zinc-200 text-xl mt-4 flex justify-center'>
                 Don't have an account?
-                <a href='/SignUp' className='ml-2 text-blue-400 hover:underline'>Sign Up</a>
+                <a href='/sign-up' className='ml-2 text-blue-400 hover:underline'>Sign Up</a>
               </p>
             </div>
           </div>

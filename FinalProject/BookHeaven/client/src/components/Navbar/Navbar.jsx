@@ -81,13 +81,13 @@ const Navbar = () => {
             {isLoggedIn === false &&
               <>
                 <Link
-                  to="/LogIn"
+                  to="/login"
                   className="px-4 py-1 border border-wight rounded hover:bg-zinc-300 transition-all duration-300"
                 >
                   LogIn
                 </Link>
                 <Link
-                  to="/SignUp"
+                  to="/sign-up"
                   className="px-4 py-1 bg-yellow-100 rounded hover:bg-zinc-300 text-zinc-900 transition-all duration-300"
                 >
                   SignUp

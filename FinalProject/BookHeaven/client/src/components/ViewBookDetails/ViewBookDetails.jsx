@@ -3,27 +3,28 @@ import axios from 'axios';
 import Loader from '../Loader/Loader'
 import { MdDeleteForever } from "react-icons/md";
 import { FaEdit } from "react-icons/fa";
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams, Link } from 'react-router-dom';
 import { CiImageOff } from "react-icons/ci";
 import { MdOutlineLanguage } from "react-icons/md";
 import { useSelector } from 'react-redux';
 
-
 const ViewBookDetails = () => {
+    const navigate =useNavigate();
     const { id } = useParams();
     const [Data, setData] = useState();
     const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
     const role = useSelector((state) => state.auth.role);
-
+    const headers = {
+        'Authorization': `Bearer ${localStorage.getItem("token")}`,
+        'Content-Type': 'application/json',
+    }
+    
     function handleBorrowBook() {
         let config = {
             method: 'get',
             maxBodyLength: Infinity,
             url: `https://ahllibrary.azurewebsites.net/api/Book/BuyBook/${id}`,
-            headers: {
-                'Authorization': `Bearer ${localStorage.getItem("token")}`,
-                'Content-Type': 'application/json',
-            }
+            headers
         };
 
         axios.request(config)
@@ -54,6 +55,22 @@ const ViewBookDetails = () => {
             });
     }, []);
 
+   
+    const deleteBook = async () => {
+        try {
+            const response = await axios.delete(
+                `https://ahllibrary.azurewebsites.net/api/Book/DeleteBook/${id}`,
+                { headers }
+            )
+            alert("The Book Deleted Successfully")
+            navigate("/all-books")
+        } catch (error) {
+            alert("Something went wrong")
+            console.log(error)
+
+        }
+    }
+
     return (
         <>
             {Data ?
@@ -70,18 +87,23 @@ const ViewBookDetails = () => {
                                     />
                                 </>
                             ) : (
-                                <div className="flex flex-col items-center justify-center h-full">
+                                <div className="flex flex-col items-center justify-center h-[70vh]">
                                     <p className='text-zinc-300 font-semibold mb-4 text-5xl'>No Cover Page</p>
                                     <CiImageOff className="text-zinc-300 text-8xl" />
                                 </div>
                             )}
                             {isLoggedIn && role === "Admin" &&
-                                <div className='flex flex-row lg:flex-col items-center justify-center lg:justify-start mt-4 lg:mt-0 md:gap-5'>
-                                    <button className='bg-white rounded lg:rounded-full text-3xl p-3 text-red-500 flex items-center justify-center'>
+                                <div className='flex flex-col items-center justify-center lg:justify-start mt-4 lg:mt-0 gap-5'>
+                                    <Link to={`/update-book/${id}`}
+                                        className='bg-white rounded lg:rounded-full text-3xl p-3 flex items-center justify-center'
+                                    >
                                         <FaEdit />{" "}
-                                        <span className='ms-2 block lg:hidden text-2xl'>Update the Book</span>
-                                    </button>
-                                    <button className='text-white rounded lg:rounded-full text-3xl p-3 mt-0 lg:mt-8 bg-blue-500 flex items-center justify-center'>
+                                        <span className='ms-2 block lg:hidden text-2xl'>Update Book</span>
+                                    </Link>
+                                    <button
+                                        className='text-red-500 rounded lg:rounded-full text-3xl p-3 mt-0 lg:mt-8 bg-white flex items-center justify-center'
+                                        onClick={deleteBook}
+                                    >
                                         <MdDeleteForever />{" "}
                                         <span className='ms-2 block lg:hidden text-2xl'>Delete the Book</span>
                                     </button>

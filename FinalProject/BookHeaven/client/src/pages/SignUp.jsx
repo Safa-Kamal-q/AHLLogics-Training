@@ -93,7 +93,7 @@ const SignUp = () => {
             <p className='text-zinc-200 text-xl flex justify-center'>Or</p>
             <p className='text-zinc-200 text-xl mt-4 flex justify-center'>
               Already have an account?
-              <a href='/LogIn' className='ml-2 text-blue-400 hover:underline'>Log in</a>
+              <a href='/login' className='ml-2 text-blue-400 hover:underline'>Log in</a>
             </p>
           </div>
         </div>
