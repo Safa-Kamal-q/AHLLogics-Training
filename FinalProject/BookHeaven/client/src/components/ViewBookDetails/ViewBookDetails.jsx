@@ -121,7 +121,7 @@ const ViewBookDetails = () => {
                         <p className='mt-4 text-zinc-100 text-3xl font-semibold'>
                             Price:₪ {Data.price}{" "}
                         </p>
-                        {isLoggedIn && role !== "admin" && Data.isAvaliable &&
+                        {isLoggedIn && role !== "Admin" && Data.isAvaliable &&
                             <>
                                 <button
                                     className="w-full mt-5 px-20 py-4 bg-yellow-100 rounded hover:bg-zinc-300 text-zinc-900 transition-all duration-300"
