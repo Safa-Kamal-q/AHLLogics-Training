@@ -40,9 +40,9 @@ The frontend was built using an API provided by the company. The project is base
    ```
 --- 
 
-***Note:*** Unfortenetly The API has expired so you can't see every interface by cloninng it
+***Note:*** Unfortunately The API has expired so you can't see every interface by cloning it
 
-### If you stuck then contact me on [linkedIn](https://www.linkedin.com/in/safa-qasrawi-073a3024b/)
+### If you are stuck then contact me on [linkedIn](https://www.linkedin.com/in/safa-qasrawi-073a3024b/)
 
 ## ✨️ Some User Interface Screenshots
 
@@ -51,3 +51,5 @@ The frontend was built using an API provided by the company. The project is base
 ![Screenshot (15)](https://github.com/user-attachments/assets/621e750f-8a51-41ae-b2bf-29a8f08e7766)
 ![Screenshot (17)](https://github.com/user-attachments/assets/5318c8b0-894f-4dc9-8e47-7cc38d7d3cd0)
 ![Screenshot (16)](https://github.com/user-attachments/assets/8748a0ba-2c4a-40de-944a-c7d8efd8fa78)
+
+### You can see the video showing the user interface  by clicking [here](https://drive.google.com/file/d/172J4HCdkoRzl1Xgmzkedap3s9cZW59n7/view?usp=sharing)
